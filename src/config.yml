@@ -1,0 +1,166 @@
+########################################################
+#
+#   Database Config
+#
+########################################################
+
+# DB = 'local' or 'mysql'
+db: local
+
+# Database Login
+host: 0.0.0.0
+port: 3306
+database: users
+username: root
+password: ""
+table: user
+databaseParameters: "?autoReconnect=true"
+
+# this is a small step to prevent abuse of the referrals
+# 0 for no referral from the same network
+useSameIPLimit: true
+# Max from the same IP
+maxSameIP: 0
+
+
+
+########################################################
+#
+#   Player Rewards
+#
+########################################################
+
+# the Player has to confirm referral (or reject)
+usePlayerConfirm: true
+
+# Use a Referral time limit
+# The time limit affects only the normal rewards (Not the milestone rewards)
+# The Player will have to use /ref < Player> within the timelimit when first joining the server
+useReferralTimeLimit: false
+# Time limit in minutes
+referralTimeLimit: 60
+
+# Use a Referral min play
+# The time limit effect when the player can be rewarded
+# The Player needs play for a cartain amount of time to use /ref
+useReferralMinPlay: false
+# Time limit in minutes
+referralMinPlay: 20
+
+# Option if they can refer each other
+canReferEachOther: false
+
+
+# These are the default rewards
+# This is the player that invited another player
+playerRefers: 
+   - give <Player> diamond 64
+   - give <Player> diamond 64
+   - give <Player> diamond 64
+# This is the player that recieved an invite from a player
+playerReferd: 
+   - give <Player> diamond 32
+   
+
+# Use milestone rewards
+# This will not be affected by the time limit
+# These are for the Player that invited a certain amount of players to the server
+useMileStoneRewards: false
+# Milestone reward
+# These are some examples, and You can add more or change it
+# min = the required amount to get the reward
+# command = a list of commands to execute
+rewards:
+   1:
+      min: 5
+      commands:
+         - give <Player> diamond 64
+   2:
+      min: 10
+      commands:
+         - give <Player> diamond 128
+
+
+
+
+########################################################
+#
+#   Chat Config
+#
+########################################################
+
+# No permission
+noPerm: "&cYou don't have the required permission."
+# Player only
+playerOnly: "&cOnly players can use this command."
+# Too many Arguments
+tooManyArgs: "&cToo many arguments!"
+# if Player isn't online
+notOnline: "&f%player_name% &c is not online"
+# Missing player name
+missingPlayer: "&cMissing player name."
+# Missing args
+missingaArgs: "&cMissing arguments."
+# Shows ref total
+playerTotal: "&6Player &f%player_name% &6Has: &f%referral_total% &6Referrals"
+# If Player tries to ref accept self
+acceptSelf: "&cYou need to accept someone else"
+# This Player already referred someone
+alreadyRefed: "&cThis player already got a referral."
+# if that Player has not referred him
+didntRef: "&cThat player didn't refer you!"
+# confirm referral from Player
+playerRef: "&6Confirm referral: &f%player_name%"
+# player has been removed from the database
+playerRemoved: "&6Player: &f&f%player_name% &6has been removed"
+# Remove All
+removeAll: "&6All players have been removed"
+# failed to remove
+playerRemovedFailed: "&6Was not able to remove: &f%player_name%"
+# player has been reset from database
+playerReset: "&6Player: &f%player_name% &6has been reset"
+# Reset All
+resetAll: "&6All players have been reset"
+# failed to reset
+playerResetFailed: "&6Was not able to reset: &f%player_name%"
+# if Player tries to reject without a name
+rejectSomeone: "&cYou need to reject someone else!"
+# if Player rejects
+playerRej: "&6You Rejected &f%player_name% referral."
+# if Player tries to refer self
+referSelf: "&cYou can't referral yourself!"
+# if the Player refers to a player
+referring: "&6referring: &f%player_name%"
+# if the Player tries to ref but already refed someone
+alreadyRefedSelf: "&cYou already refed a player"
+# if the Player sends ref twice to a player
+alreadySendRef: "&cYou already send a request to this player"
+# if the Player got a refer
+youGotRefer: "&f%player_name% &6got your referral do you:"
+# a confirm to the sender
+youSendRequest: "&6You send request to: &f%player_name%"
+# when the player is to late
+referTooLate: "&6Your referral was not in the time limit."
+# when the players play time is to low
+referMinPlay: "&6You have not met the required play time."
+# cant Refer more from the same IP
+maxIP: "&6You can't use your referral."
+# The notification the receives when the Player got rejected
+playerGotRej: "&6Your referral got rejected by: &f%player_name%."
+# The notification the player receives when the Player accepted ref
+playerAcceptedRef: "&6You got referred by: &f%player_name%."
+####
+# The button colours can't be changed
+# Text on the accept button
+accept: "Accept"
+# Text on the decline button
+decline: "Decline"
+
+# The text if they try to
+referEachOther: "&cYou can't refer each other!"
+
+# Enable notification
+enableNotification: false
+#Only for Player that join the first time
+referNotification: "&6The referral system has a time limit, so make sure you use it."
+
