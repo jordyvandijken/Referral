@@ -152,7 +152,7 @@ playerAcceptedRef: "&6You got referred by: &f%player_name%."
 ####
 # The button colours can't be changed
 # Text on the accept button
-accept: "Accept"
+accept: "Accept "
 # Text on the decline button
 decline: "Decline"
 

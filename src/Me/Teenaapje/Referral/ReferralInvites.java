@@ -43,8 +43,8 @@ public class ReferralInvites {
 		referInvites.add(new Refer(to, from));
 		
 		// get the buttons
-		TextComponent accept  = Utils.CreateTextComponent(core.config.accept, ChatColor.GREEN, true, ClickEvent.Action.RUN_COMMAND, "/ref Accept " + from);
-		TextComponent decline = Utils.CreateTextComponent(core.config.decline,  ChatColor.RED, true, ClickEvent.Action.RUN_COMMAND, "/ref Reject " + from);
+		TextComponent accept  = Utils.CreateTextComponent(core.config.accept, ChatColor.GREEN, true, ClickEvent.Action.RUN_COMMAND, "/ref accept " + from);
+		TextComponent decline = Utils.CreateTextComponent(core.config.decline,  ChatColor.RED, true, ClickEvent.Action.RUN_COMMAND, "/ref reject " + from);
 		
 		// send invite
 		Utils.SendMessage(toPlayer, core.config.youGotRefer, fromPlayer);
