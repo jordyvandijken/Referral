@@ -54,12 +54,12 @@ canReferEachOther: false
 # These are the default rewards
 # This is the player that invited another player
 playerRefers: 
-   - give <Player> diamond 64
-   - give <Player> diamond 64
-   - give <Player> diamond 64
+   - give <player> diamond 64
+   - give <player> diamond 64
+   - give <player> diamond 64
 # This is the player that recieved an invite from a player
 playerReferd: 
-   - give <Player> diamond 32
+   - give <player> diamond 32
    
 
 # Use milestone rewards
@@ -74,11 +74,11 @@ rewards:
    1:
       min: 5
       commands:
-         - give <Player> diamond 64
+         - give <player> diamond 64
    2:
       min: 10
       commands:
-         - give <Player> diamond 128
+         - give <player> diamond 128
 
 
 

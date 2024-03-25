@@ -56,8 +56,9 @@ public class CommandManager implements CommandExecutor, TabExecutor {
 						}
 					}
 				}
-		
-				mainCommand.onCommand(sender, cmd, label, args);	
+				if (mainCommand.CanUse(sender, true)) {
+					mainCommand.onCommand(sender, cmd, label, args);
+				}
 			}
 		}.runTaskAsynchronously(core);
 		
