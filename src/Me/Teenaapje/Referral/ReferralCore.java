@@ -60,7 +60,7 @@ public class ReferralCore extends JavaPlugin{
 	public void UseCommands(List<?> commands, Player player) {
 		for (int i = 0; i < commands.size(); i++) {
 			String command = (String) commands.get(i);
-			
+
 			getServer().getScheduler().runTask(this, new Runnable() {
 				@Override
 				public void run() {
