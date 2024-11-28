@@ -234,33 +234,59 @@ public class Database {
 		
 		return true;
 	}
-	
+
 	public String PlayerReferraldBy (String playerUUID) {
 		try {
 			if (!PlayerExists(playerUUID)) {
 				return null;
-			}	
-			
+			}
+
 			PreparedStatement statement = getConnection().prepareStatement("select REFERRED from " + table + " where UUID=?");
-			
+
 			statement.setString(1, playerUUID);
-			
+
 			ResultSet result = statement.executeQuery();
-						
+
 			if (result.next() && result.getString("REFERRED") != null) {
 				return result.getString("REFERRED");
 			}
-			
+
 			statement.close();
-			
+
 		} catch (SQLException e) {
 			System.out.print("Error Function playerReferrald");
 			e.printStackTrace();
 		}
-		
+
 		return null;
 	}
-	
+
+	public String PlayerReferraldByName (String playerUUID) {
+		try {
+			if (!PlayerExists(playerUUID)) {
+				return "None";
+			}
+
+			PreparedStatement statement = getConnection().prepareStatement("SELECT COALESCE(t2.NAME, 'None') AS ReferredBy FROM " + table + " t1 LEFT JOIN " + table + " t2 ON t1.REFERRED = t2.UUID WHERE t1.UUID = ?");
+
+			statement.setString(1, playerUUID);
+
+			ResultSet result = statement.executeQuery();
+
+			if (result.next() && result.getString("ReferredBy") != null) {
+				return result.getString("ReferredBy");
+			}
+
+			statement.close();
+
+		} catch (SQLException e) {
+			System.out.print("Error Function PlayerReferraldByName");
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
 	public boolean PlayerReset(String player) {
 		try {
 			if (!PlayerExists(player)) {

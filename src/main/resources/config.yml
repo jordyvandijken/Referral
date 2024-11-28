@@ -57,7 +57,7 @@ playerRefers:
    - give <Player> diamond 64
    - give <Player> diamond 64
    - give <Player> diamond 64
-# This is the player that recieved an invite from a player
+# This is the player that received an invitation from a player
 playerReferd: 
    - give <Player> diamond 32
    
@@ -65,7 +65,7 @@ playerReferd:
 # Use milestone rewards
 # This will not be affected by the time limit
 # These are for the Player that invited a certain amount of players to the server
-useMileStoneRewards: false
+useMileStoneRewards: true
 # Milestone reward
 # These are some examples, and You can add more or change it
 # min = the required amount to get the reward
@@ -132,7 +132,7 @@ referSelf: "&cYou can't referral yourself!"
 # if the Player refers to a player
 referring: "&6referring: &f%player_name%"
 # if the Player tries to ref but already refed someone
-alreadyRefedSelf: "&cYou already refed a player"
+alreadyRefedSelf: "&cYou already referred by %referral_referred_by%"
 # if the Player sends ref twice to a player
 alreadySendRef: "&cYou already send a request to this player"
 # if the Player got a refer

@@ -58,7 +58,8 @@ public class Utils {
 		}
 		
 		return text.replace("%referral_total%", Integer.toString(ReferralCore.core.db.GetReferrals(player.getUniqueId().toString(), player.getName())))
-				   .replace("%referral_refed%", String.valueOf(ReferralCore.core.db.PlayerReferrald(player.getUniqueId().toString(), player.getName())));
+				   .replace("%referral_refed%", String.valueOf(ReferralCore.core.db.PlayerReferrald(player.getUniqueId().toString(), player.getName())))
+				   .replace("%referral_referred_by%",ReferralCore.core.db.PlayerReferraldByName(player.getUniqueId().toString()));
 	}
 	
 	/// Color code text

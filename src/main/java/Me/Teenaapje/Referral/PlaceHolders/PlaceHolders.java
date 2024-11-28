@@ -82,6 +82,10 @@ public class PlaceHolders extends PlaceholderExpansion{
             return Boolean.toString(ReferralCore.core.db.PlayerReferrald(p.getUniqueId().toString(), p.getName()));
         }
 
+        if(params.equals("referred_by")) {
+            return ReferralCore.core.db.PlayerReferraldByName(p.getUniqueId().toString());
+        }
+
         return null;
     }
     
@@ -94,9 +98,13 @@ public class PlaceHolders extends PlaceholderExpansion{
         if(params.equals("total")) {
             return Integer.toString(ReferralCore.core.db.GetReferrals(p.getUniqueId().toString(), p.getName()));
         }
-        
+
         if(params.equals("refed")) {
             return Boolean.toString(ReferralCore.core.db.PlayerReferrald(p.getUniqueId().toString(), p.getName()));
+        }
+
+        if(params.equals("referred_by")) {
+            return ReferralCore.core.db.PlayerReferraldByName(p.getUniqueId().toString());
         }
 
         return null;

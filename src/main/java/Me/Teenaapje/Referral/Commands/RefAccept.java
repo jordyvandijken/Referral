@@ -63,23 +63,23 @@ public class RefAccept extends CommandBase {
 
 			// give rewards
 		    core.UseCommands(ConfigManager.playerRefers, player);
-		    core.UseCommands(ConfigManager.playerReferd, target); 
-		    
+		    core.UseCommands(ConfigManager.playerReferd, target);
+
 		    // check if the server wants to user milestone rewards
-		    if (ConfigManager.useMileStoneRewards) {
-			    // get the targets info
-			    String playerUUID = player.getUniqueId().toString();
-			    String playerName = player.getName();
-			    
-			    int playerLastReward = core.db.GetLastReward(playerUUID, playerName);
-			    int playerReferrals = core.db.GetReferrals(playerUUID, playerName);
-			    
-			    // check if he has a new milestone reward
-			    if (core.milestone.HasAReward(playerLastReward, playerReferrals)) {
-			    	core.UseCommands(core.milestone.GetRewards(playerReferrals), player);
-				}	
-		    }
-		    core.rInvites.RemoveFromList(player.getName(), args[1]);
+			if (ConfigManager.useMileStoneRewards) {
+				// get the players info
+				String playerUUID = player.getUniqueId().toString();
+				String playerName = player.getName();
+
+				int playerLastReward = core.db.GetLastReward(playerUUID, playerName);
+				int playerReferrals = core.db.GetReferrals(playerUUID, playerName);
+
+				// check if he has a new milestone reward
+				if (core.milestone.HasAReward(playerLastReward, playerReferrals)) {
+					core.UseCommands(core.milestone.GetRewards(playerReferrals), player);
+				}
+			}
+			core.rInvites.RemoveFromList(player.getName(), args[1]);
 		} catch (Exception e) {
 			e.fillInStackTrace();
 		}
