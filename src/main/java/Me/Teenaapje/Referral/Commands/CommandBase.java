@@ -20,6 +20,10 @@ public class CommandBase {
 	}
 	
 	public boolean HasPermission (CommandSender sender, boolean sendmsg) {
+		if (permission == "") {
+			return true;
+		}
+		
 		if (sender instanceof Player) {
 			if (sender.hasPermission("Referral." + permission)) {
 				return true;

@@ -22,8 +22,6 @@ useSameIPLimit: true
 # Max from the same IP
 maxSameIP: 0
 
-
-
 ########################################################
 #
 #   Player Rewards
@@ -50,17 +48,15 @@ referralMinPlay: 20
 # Option if they can refer each other
 canReferEachOther: false
 
-
 # These are the default rewards
 # This is the player that invited another player
-playerRefers: 
-   - give <Player> diamond 64
-   - give <Player> diamond 64
-   - give <Player> diamond 64
-# This is the player that received an invitation from a player
-playerReferd: 
-   - give <Player> diamond 32
-   
+playerRefers:
+    - give <player> diamond 64
+    - give <player> diamond 64
+    - give <player> diamond 64
+# This is the player that recieved an invite from a player
+playerReferd:
+    - give <player> diamond 32
 
 # Use milestone rewards
 # This will not be affected by the time limit
@@ -71,17 +67,14 @@ useMileStoneRewards: true
 # min = the required amount to get the reward
 # command = a list of commands to execute
 rewards:
-   1:
-      min: 5
-      commands:
-         - give <Player> diamond 64
-   2:
-      min: 10
-      commands:
-         - give <Player> diamond 128
-
-
-
+    1:
+        min: 5
+        commands:
+            - give <player> diamond 64
+    2:
+        min: 10
+        commands:
+            - give <player> diamond 128
 
 ########################################################
 #
@@ -152,7 +145,7 @@ playerAcceptedRef: "&6You got referred by: &f%player_name%."
 ####
 # The button colours can't be changed
 # Text on the accept button
-accept: "Accept"
+accept: "Accept "
 # Text on the decline button
 decline: "Decline"
 
@@ -163,4 +156,3 @@ referEachOther: "&cYou can't refer each other!"
 enableNotification: false
 #Only for Player that join the first time
 referNotification: "&6The referral system has a time limit, so make sure you use it."
-

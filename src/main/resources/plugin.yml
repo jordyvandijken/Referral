@@ -6,5 +6,5 @@ main: Me.Teenaapje.Referral.ReferralCore
 description: Referral
 softdepend: [PlaceholderAPI]
 commands:
-   Ref:
-      description: /Ref to get more options
+    Ref:
+        description: /Ref to get more options
